@@ -34,10 +34,6 @@ public class UnityChanController : MonoBehaviour
     //ジャンプボタン押下の判定
     private bool isJButtonDown = false;
 
-    private GameObject CarObject;
-    private GameObject CoinObject;
-    private GameObject TrafficConeObject;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -106,29 +102,6 @@ public class UnityChanController : MonoBehaviour
         //Unityちゃんに速度を与える
         this.myRigidbody.velocity = new Vector3(inputVelocityX, inputVelocityY, this.velocityZ);
 
-        //シーン中のCarオブジェクトを取得
-        this.CarObject = GameObject.FindWithTag("CarTag");
-        //シーン中のCoinオブジェクトを取得
-        this.CoinObject = GameObject.FindWithTag("CoinTag");
-        //シーン中のTrafficConeオブジェクトを取得
-        this.TrafficConeObject = GameObject.FindWithTag("TrafficConeTag");
-
-        //Unityちゃんが通り過ぎたCarは破棄
-        if (this.transform.position.z > this.CarObject.transform.position.z)
-        {
-            Destroy(CarObject);
-        }
-        //Unityちゃんが通り過ぎたCoinは破棄
-        if (this.transform.position.z > this.CoinObject.transform.position.z)
-        {
-            Destroy(CoinObject);
-        }
-        //Unityちゃんが通り過ぎたTrafficConeは破棄
-        if (this.transform.position.z > this.TrafficConeObject.transform.position.z)
-        {
-            Destroy(TrafficConeObject);
-        }
-
     }
 
     //トリガーモードで他のオブジェクトと接触した場合の処理
@@ -196,4 +169,5 @@ public class UnityChanController : MonoBehaviour
     {
         this.isRButtonDown = false;
     }
+
 }

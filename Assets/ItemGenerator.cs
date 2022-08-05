@@ -10,8 +10,6 @@ public class ItemGenerator : MonoBehaviour
     public GameObject coinPrefab;
     //cornPrefabを入れる
     public GameObject conePrefab;
-    //スタート地点
-    private int startPos = 80;
     //ゴール地点
     private int goalPos = 360;
     //アイテムを出すx方向の範囲
@@ -69,7 +67,6 @@ public class ItemGenerator : MonoBehaviour
                         car.transform.position = new Vector3(posRange * j, car.transform.position.y, this.unitychanObject.transform.position.z + 40 + offsetZ);
                     }
                 }
-
             }
         }
     }
